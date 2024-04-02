@@ -1,2 +1,5 @@
 # FlashCardAppFX
- A JavaFX flashcard app
+ A JavaFX flashcard application.
+
+# UML Diagram
+![UML Diagram](uml.png)
