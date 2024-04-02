@@ -6,9 +6,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.flashcardapp.gui.SettingsSceneController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.text.Text?>
+<?import javafx.collections.FXCollections?>
+<VBox fx:id="settingsVBox" spacing="20" alignment="CENTER" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.SettingsSceneController" stylesheets="@style.css">
+    <Text text="Settings" styleClass="scene-title"/>
 
-</AnchorPane>
+    <Separator/>
+
+    <VBox spacing="10">
+        <HBox spacing="10" alignment="CENTER">
+            <Text text="Theme: " styleClass="flashcard-text"/>
+            <ChoiceBox fx:id="themeChoiceBox" onAction="#handleThemeChange" styleClass="choice-box">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Light"/>
+                        <String fx:value="Dark"/>
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+        </HBox>
+    </VBox>
+
+    <Separator/>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Button text="Reset Data" onAction="#handleResetData" styleClass="secondary-buttons"/>
+        <Button text="Export Data" onAction="#handleExportData" styleClass="secondary-buttons"/>
+        <Button text="Import Data" onAction="#handleImportData" styleClass="secondary-buttons"/>
+        <Button text="About" onAction="#handleAbout" styleClass="secondary-buttons"/>
+    </VBox>
+
+    <Separator/>
+
+    <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
+</VBox>

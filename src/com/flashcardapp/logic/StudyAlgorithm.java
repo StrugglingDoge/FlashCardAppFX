@@ -7,13 +7,27 @@ import java.util.List;
 public class StudyAlgorithm implements IAlgorithm {
 
     @Override
-    public List<Flashcard> orderFlashcards(List<Flashcard> flashcards) {
-        return null;
+    public void initialize(List<Flashcard> flashcards) {
+
     }
 
+    @Override
+    public void recordResponse(Flashcard flashcard, boolean isCorrect) {
+
+    }
 
     @Override
-    public int compare(Object o1, Object o2) {
+    public boolean isSessionComplete() {
+        return false;
+    }
+
+    @Override
+    public int getPreviousFlashcardIndex() {
+        return 0;
+    }
+
+    @Override
+    public int getNextFlashcardIndex() {
         return 0;
     }
 }

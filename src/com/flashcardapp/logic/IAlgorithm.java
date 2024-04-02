@@ -1,12 +1,19 @@
 package com.flashcardapp.logic;
 
 import com.flashcardapp.model.Flashcard;
-
-import java.util.Comparator;
 import java.util.List;
 
-// IAlgorithm is an interface for study deck algorithms, so it will need to order the cards in a deck
-public interface IAlgorithm extends Comparator {
-    List<Flashcard> orderFlashcards(List<Flashcard> flashcards);
+public interface IAlgorithm {
 
+    // Initializes the algorithm with a list of flashcards
+    void initialize(List<Flashcard> flashcards);
+
+    // Records the user's response to the flashcard (correct, incorrect, etc.)
+    void recordResponse(Flashcard flashcard, boolean isCorrect);
+
+    // Determines if the study session is complete
+    boolean isSessionComplete();
+
+    int getPreviousFlashcardIndex();
+    int getNextFlashcardIndex();
 }

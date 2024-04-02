@@ -1,0 +1,134 @@
+/* Global Styles */
+.root {
+    -fx-font-family: 'Arial';
+}
+
+/* Button Styles */
+.button {
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+}
+
+.main-buttons {
+    -fx-background-color: #2a9df4; /* Primary Color */
+}
+.main-buttons:hover {
+    -fx-background-color: #1a8de3; /* Primary Hover Color */
+}
+.main-buttons:pressed {
+    -fx-background-color: #0a7dd2; /* Primary Pressed Color */
+}
+
+.secondary-buttons {
+    -fx-background-color: #3aafec; /* Secondary Color */
+}
+.secondary-buttons:hover {
+    -fx-background-color: #29a0dc; /* Secondary Hover Color */
+}
+.secondary-buttons:pressed {
+    -fx-background-color: #1990cc; /* Secondary Pressed Color */
+}
+
+.button:disabled {
+    -fx-background-color: #b0b0b0; /* Disabled Color */
+}
+.button:disabled:hover,
+.button:disabled:pressed {
+    -fx-background-color: #b0b0b0; /* Disabled Hover Color */
+}
+
+/* Back Button Style */
+.back-button {
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+    -fx-background-color: #555555; /* Back Button Color */
+}
+.back-button:hover {
+    -fx-background-color: #444444; /* Back Button Hover Color */
+}
+
+/* Scene Title */
+.scene-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Layout Containers */
+.container {
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+}
+
+/* Input Fields */
+.text-field, .text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-radius: 5px;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+}
+
+/* Error Messages */
+.error-message {
+    -fx-font-size: 12px;
+    -fx-text-fill: red; /* Error Color */
+}
+
+/* Flashcard Styles */
+.flashcard {
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+}
+
+.flashcard-content {
+    -fx-font-size: 16px;
+    -fx-text-alignment: center;
+}
+
+.tags-pane {
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
+}
+
+.flashcard-summary {
+    -fx-padding: 10px;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-color: #f4f4f4;
+}
+
+.flashcard-question {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.flashcard-answer {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+.flashcard-hint {
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}

@@ -6,9 +6,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.flashcardapp.gui.StudySessionSceneController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.text.Text?>
+<VBox fx:id="studySessionVBox" spacing="20" alignment="CENTER" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.StudySessionSceneController" stylesheets="@style.css">
+    <Text text="Study Session" styleClass="scene-title"/>
 
-</AnchorPane>
+    <HBox spacing="20" alignment="CENTER">
+        <FlowPane fx:id="tagsFlowPane" hgap="10" vgap="10" alignment="CENTER" styleClass="tags-pane">
+            <VBox fx:id="flashcard" styleClass="flashcard" alignment="CENTER" spacing="10" minWidth="300" minHeight="200" style="-fx-border-color: black; -fx-border-width: 1px;">
+                <Text fx:id="questionText" text="Question appears here" styleClass="flashcard-content"/>
+                <Text fx:id="answerText" text="Answer appears here" styleClass="flashcard-content" visible="false"/>
+            </VBox>
+        </FlowPane>
+        <VBox fx:id="hintContainer" alignment="TOP_CENTER" spacing="10" minWidth="200" styleClass="flashcard, hint-flashcard">
+            <Text text="Hint" styleClass="flashcard-content"/>
+            <Text fx:id="hintText" text="Click to reveal hint" styleClass="flashcard-content"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Next" onAction="#handleNext" styleClass="secondary-buttons"/>
+        <Button text="Previous" onAction="#handlePrevious" styleClass="secondary-buttons"/>
+    </HBox>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Show Answer" onAction="#handleShowAnswer" styleClass="secondary-buttons"/>
+        <Button text="Correct" onAction="#handleCorrect" styleClass="secondary-buttons"/>
+        <Button text="Incorrect" onAction="#handleIncorrect" styleClass="secondary-buttons"/>
+    </HBox>
+
+    <Text fx:id="sessionStatsText" text="Session stats will be shown here" styleClass="flashcard-text"/>
+    <Button text="Restart Session" onAction="#handleRestartSession" styleClass="secondary-buttons"/>
+    <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
+</VBox>
