@@ -7,33 +7,62 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
-<VBox fx:id="studySessionVBox" spacing="20" alignment="CENTER" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.StudySessionSceneController" stylesheets="@style.css">
-    <Text text="Study Session" styleClass="scene-title"/>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.StudySessionSceneController" stylesheets="@style.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <vgap>
+        <Double fx:value="20.0"/>
+    </vgap>
+    <hgap>
+        <Double fx:value="20.0"/>
+    </hgap>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50" minWidth="10" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="50" minWidth="10" hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10" prefHeight="30" vgrow="SOMETIMES"/>
+    </rowConstraints>
 
-    <HBox spacing="20" alignment="CENTER">
-        <FlowPane fx:id="tagsFlowPane" hgap="10" vgap="10" alignment="CENTER" styleClass="tags-pane">
-            <VBox fx:id="flashcard" styleClass="flashcard" alignment="CENTER" spacing="10" minWidth="300" minHeight="200" style="-fx-border-color: black; -fx-border-width: 1px;">
-                <Text fx:id="questionText" text="Question appears here" styleClass="flashcard-content"/>
-                <Text fx:id="answerText" text="Answer appears here" styleClass="flashcard-content" visible="false"/>
-            </VBox>
-        </FlowPane>
-        <VBox fx:id="hintContainer" alignment="TOP_CENTER" spacing="10" minWidth="200" styleClass="flashcard, hint-flashcard">
-            <Text text="Hint" styleClass="flashcard-content"/>
-            <Text fx:id="hintText" text="Click to reveal hint" styleClass="flashcard-content"/>
-        </VBox>
-    </HBox>
+    <!-- Study Session Title -->
+    <Text text="Study Session" styleClass="scene-title" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
 
-    <HBox spacing="10" alignment="CENTER">
-        <Button text="Next" onAction="#handleNext" styleClass="secondary-buttons"/>
+    <!-- Flashcard Section -->
+    <StackPane GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.rowSpan="3">
+    <VBox fx:id="flashcardSection" alignment="CENTER" spacing="10" styleClass="flashcard" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.rowSpan="3">
+        <Text fx:id="questionText" text="Question appears here" styleClass="flashcard-content"/>
+        <Text fx:id="answerText" text="Answer appears here" styleClass="flashcard-content" visible="false"/>
+
+        <!-- Buttons for flashcard navigation -->
+        <HBox spacing="10" alignment="BOTTOM_CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Button text="Show Answer" onAction="#handleShowAnswer" styleClass="secondary-buttons"/>
+            <Button text="Correct" onAction="#handleCorrect" styleClass="secondary-buttons"/>
+            <Button text="Incorrect" onAction="#handleIncorrect" styleClass="secondary-buttons"/>
+        </HBox>
+
+        <!-- Session Stats Text -->
+        <Text fx:id="sessionStatsText" text="Session stats will be shown here" styleClass="flashcard-text"/>
+    </VBox>
+
+    </StackPane>
+
+    <!-- Hint Section -->
+    <VBox fx:id="hintContainer" alignment="TOP_CENTER" spacing="10" styleClass="flashcard, hint-flashcard" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Text text="Hint" styleClass="flashcard-content"/>
+        <Text fx:id="hintText" text="Click to reveal hint" styleClass="flashcard-content"/>
+    </VBox>
+
+    <!-- Session Navigation Buttons -->
+    <HBox spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2">
         <Button text="Previous" onAction="#handlePrevious" styleClass="secondary-buttons"/>
+        <Button text="Next" onAction="#handleNext" styleClass="secondary-buttons"/>
+        <Button text="Restart Session" onAction="#handleRestartSession" styleClass="secondary-buttons"/>
+        <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
     </HBox>
-    <HBox spacing="10" alignment="CENTER">
-        <Button text="Show Answer" onAction="#handleShowAnswer" styleClass="secondary-buttons"/>
-        <Button text="Correct" onAction="#handleCorrect" styleClass="secondary-buttons"/>
-        <Button text="Incorrect" onAction="#handleIncorrect" styleClass="secondary-buttons"/>
-    </HBox>
-
-    <Text fx:id="sessionStatsText" text="Session stats will be shown here" styleClass="flashcard-text"/>
-    <Button text="Restart Session" onAction="#handleRestartSession" styleClass="secondary-buttons"/>
-    <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
-</VBox>
+</GridPane>
