@@ -24,8 +24,8 @@ hs_err_pid*
 replay_pid*
 
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
+FlashCardAppFX/build/
+!FlashCardAppFX/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -37,7 +37,7 @@ build/
 *.iws
 *.iml
 *.ipr
-out/
+FlashCardAppFX/out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
@@ -49,7 +49,7 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
+FlashCardAppFX/bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
