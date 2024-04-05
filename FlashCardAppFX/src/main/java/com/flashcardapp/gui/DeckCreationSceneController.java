@@ -47,6 +47,7 @@ public class DeckCreationSceneController {
         questionTextField.minHeightProperty().bind(deckCreationVBox.heightProperty().divide(20));
         answerTextArea.minHeightProperty().bind(deckCreationVBox.heightProperty().divide(14));
         hintTextField.minHeightProperty().bind(deckCreationVBox.heightProperty().divide(20));
+
     }
 
     @FXML
@@ -88,10 +89,14 @@ public class DeckCreationSceneController {
 
         // create a text node to display the question
         Text questionText = new Text(flashcard.getQuestion());
+        // wrapping width is set to the width of the scene minus 80
+        questionText.wrappingWidthProperty().bind(deckCreationVBox.widthProperty().subtract(80));
         questionText.getStyleClass().add("flashcard-question");
 
         // create a text node to display the answer
         Text answerText = new Text(flashcard.getAnswer());
+        // wrapping width is set to the width of the scene minus 80
+        answerText.wrappingWidthProperty().bind(deckCreationVBox.widthProperty().subtract(80));
         answerText.getStyleClass().add("flashcard-answer");
 
         // Handle hint display

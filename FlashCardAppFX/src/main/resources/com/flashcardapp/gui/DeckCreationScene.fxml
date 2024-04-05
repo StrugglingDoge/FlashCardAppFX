@@ -19,19 +19,19 @@
             <ColumnConstraints minWidth="200" prefWidth="200" hgrow="SOMETIMES" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10" prefHeight="30" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10" prefHeight="100" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10" prefHeight="50" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="50" prefHeight="50" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="80" prefHeight="125" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="50" prefHeight="50" vgrow="SOMETIMES" />
         </rowConstraints>
 
         <Label text="Question:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <TextField fx:id="questionTextField" promptText="Enter question here" maxWidth="1.0" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field"/>
+        <TextField fx:id="questionTextField" promptText="Enter question here" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field"/>
 
         <Label text="Answer:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <TextArea fx:id="answerTextArea" promptText="Enter answer here" maxWidth="1.0" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="100" styleClass="text-area"/>
+        <TextArea fx:id="answerTextArea" promptText="Enter answer here" maxWidth="Infinity" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="100" styleClass="text-area"/>
 
         <Label text="Hint:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-        <TextField fx:id="hintTextField" promptText="Enter hint here" maxWidth="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="50" styleClass="text-area"/>
+        <TextField fx:id="hintTextField" promptText="Enter hint here" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="50" styleClass="text-area"/>
 
     </GridPane>
 
