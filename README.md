@@ -2,6 +2,19 @@
 
 A flashcard app using JavaFX. Allows users to create, manage, and study flashcard decks.
 
+# Checklist
+
+- [x] Create a new deck
+- [x] Add, modify, and delete cards in a deck
+- [x] Study a deck
+- [x] Export a deck to a file
+- [x] Import a deck from a file
+- [ ] Add images to cards
+- [ ] Spaced repetition algorithm
+- [ ] Dark mode
+- [ ] Statistics
+- [ ] Save & load user preferences (e.g., theme, last deck studied)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -43,7 +56,7 @@ After setting up the project in your IDE, you can run it directly from the IDE. 
 ## Troubleshooting
 
 If you encounter any issues while setting up the project, consider the following common fixes:
-- Ensure your IDE is using the correct JDK version (JDK 11 or newer).
+- Ensure your IDE is using the correct JDK version (JDK 21 or newer).
 - Refresh the Gradle project in your IDE. In IntelliJ, use the "Refresh Gradle project" button in the Gradle panel. In Eclipse, right-click the project and choose "Gradle" > "Refresh Gradle Project".
 - Check your internet connection to ensure dependencies can be downloaded.
 
