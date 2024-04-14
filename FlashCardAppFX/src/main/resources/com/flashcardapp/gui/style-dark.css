@@ -1,0 +1,209 @@
+/* Global Styles */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-background-color: #1e1e1e;
+    -fx-highlight-text-fill: #ffffff;
+    -fx-highlight-fill: #2a9df4; /* Highlight color */
+    -fx-text-fill: #d0d0d0;
+}
+
+/* Button Styles */
+.button {
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+}
+
+.flashcard-text {
+    -fx-fill: #d0d0d0;
+}
+
+.stats-flashcard {
+    -fx-background-color: #2a2a2a; /* Dark flashcard background */
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+}
+
+.hint-flashcard {
+
+    -fx-background-color: #2a2a2a; /* Dark flashcard background */
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+}
+
+.choice-box {
+    -fx-font-size: 14px;
+    -fx-background-color: #333333; 
+    -fx-border-color: #2a9df4; 
+    -fx-text-fill: #d0d0d0; 
+    -fx-background-radius: 5px;
+    -fx-highlight-fill: #2a9df4; /* Highlight color */
+}
+
+.main-buttons {
+    -fx-background-color: #2a9df4; /* Primary Color */
+}
+
+.main-buttons:hover {
+    -fx-background-color: #1a8de3; /* Primary Hover Color */
+}
+
+.main-buttons:pressed {
+    -fx-background-color: #0a7dd2; /* Primary Pressed Color */
+}
+
+.secondary-buttons {
+    -fx-background-color: #3aafec; /* Secondary Color */
+}
+
+.secondary-buttons:hover {
+    -fx-background-color: #29a0dc; /* Secondary Hover Color */
+}
+
+.secondary-buttons:pressed {
+    -fx-background-color: #1990cc; /* Secondary Pressed Color */
+}
+
+.button:disabled {
+    -fx-background-color: #666666; /* Darker Disabled Color */
+}
+
+.button:disabled:hover,
+.button:disabled:pressed {
+    -fx-background-color: #666666; /* Consistent Disabled Hover Color */
+}
+
+/* Back Button Style */
+.back-button {
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+    -fx-background-color: #444444;
+    -fx-text-fill: #cccccc;
+}
+
+.back-button:hover {
+    -fx-background-color: #333333;
+}
+
+.context-menu {
+    -fx-background-color: #333333; /* Dark context menu background */
+    -fx-text-fill: #d0d0d0;
+}
+
+.text-area .content {
+    -fx-background-color: #333333; /* Dark text area background */
+}
+
+/* Scene Title */
+.scene-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-fill: #d0d0d0;
+}
+
+/* Layout Containers */
+.container {
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+    -fx-text-fill: #d0d0d0; 
+}
+
+/* Input Fields */
+.text-field, .text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-color: #333333; 
+    -fx-border-color: #2a9df4;
+    -fx-text-fill: #d0d0d0;
+    -fx-background-radius: 5px;
+    -fx-highlight-fill: #2a9df4;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-fill: #d0d0d0;
+    -fx-text-fill: #cccccc;
+}
+
+/* Error Messages */
+.error-message {
+    -fx-font-size: 12px;
+    -fx-text-fill: #e57373; /* Error Color */
+}
+
+/* Flashcard Styles */
+.flashcard {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+    -fx-text-fill: #ffffff;
+}
+
+.flashcard-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-fill: #2a9df4; /* Primary color for title */
+}
+
+.flashcard-content {
+    -fx-font-size: 16px;
+    -fx-text-alignment: center;
+    -fx-fill: #d0d0d0;
+}
+
+.tags-pane {
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
+}
+
+.flashcard-summary {
+    -fx-padding: 10px;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-color: #333333; /* Dark summary background */
+    -fx-fill: #d0d0d0;
+}
+
+.flashcard-question {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-fill: #ffffff;
+}
+
+.flashcard-answer {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-fill: #d0d0d0;
+}
+
+.flashcard-hint {
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-fill: #bbbbbb;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}

@@ -1,67 +1,99 @@
 package com.flashcardapp.gui;
 
 import com.flashcardapp.FlashcardApp;
+import com.flashcardapp.util.ConfigHandler;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.stage.FileChooser;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
 
-import java.io.File;
-
+/**
+ * Controller for handling settings-related interactions in the FlashcardApp.
+ */
 public class SettingsSceneController {
+
+    @FXML
+    private ChoiceBox<String> themeChoiceBox;
+    
+    /**
+     * Initializes the settings scene with the current theme choice.
+     */
+    @FXML
+    public void initialize() {
+        themeChoiceBox.getItems().addAll("light", "dark");
+        String currentTheme = ConfigHandler.getInstance().getOption("theme", String.class);
+        themeChoiceBox.setValue(currentTheme);
+    }
+
+    /**
+     * Handles navigation back to the main scene.
+     */
+    @FXML
     public void handleBack(ActionEvent actionEvent) {
         FlashcardApp.getInstance().setFXMLScene("MainScene");
     }
 
+    /**
+     * Handles the theme change operation.
+     */
+    @FXML
     public void handleThemeChange(ActionEvent actionEvent) {
+        String selectedTheme = themeChoiceBox.getValue().toLowerCase();
+        FlashcardApp.getInstance().setTheme(selectedTheme);
+        ConfigHandler.getInstance().saveOption("theme", selectedTheme);
     }
 
+    /**
+     * Displays an informational dialog about the application.
+     */
+    @FXML
     public void handleAbout(ActionEvent actionEvent) {
-        // Show an alert dialog with information about the app
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("About Flashcard Study Helper");
-        alert.setHeaderText("Flashcard Study Helper");
-        alert.setContentText("This application is a simple flashcard study helper that allows you to create, edit, and study flashcards.\n\n" +
-                "Version: 1.0\n" +
-                "Authors: Carson Kelley, Andrew Abdelaty, Brayden Kielb, Spencer Morse, and Vic Westmoreland\n" +
-                "License: MIT License\n\n" +
-                "This application was created as a final project for the CPS 240 course at Central Michigan University.");
-
+        Alert alert = createAboutAlert();
         alert.showAndWait();
     }
 
-    public void handleImportData(ActionEvent actionEvent) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Import Data");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("JSON Files", "*.json"),
-                new FileChooser.ExtensionFilter("All Files", "*.*")
-        );
-        fileChooser.setInitialDirectory(FlashcardApp.getInstance().getDataDirectory());
-        File file = fileChooser.showOpenDialog(FlashcardApp.getInstance().getPrimaryStage());
-
-        if (file != null) {
-            FlashcardApp.getInstance().loadDeck(file.getAbsolutePath());
-        }
-    }
-
-    public void handleExportData(ActionEvent actionEvent) {
-        // open file chooser
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Export Data");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("JSON Files", "*.json"),
-                new FileChooser.ExtensionFilter("All Files", "*.*")
-        );
-        fileChooser.setInitialDirectory(FlashcardApp.getInstance().getDataDirectory());
-        File file = fileChooser.showSaveDialog(FlashcardApp.getInstance().getPrimaryStage());
-
-        // save the deck to the file
-        if (file != null) {
-            FlashcardApp.getInstance().saveDeck(FlashcardApp.getInstance().getCurrentDeck(), file.getAbsolutePath());
-        }
-
-    }
-
+    /**
+     * Handles data reset with confirmation.
+     */
+    @FXML
     public void handleResetData(ActionEvent actionEvent) {
+        if (confirmAction("Reset Data", "Are you sure you want to reset all data?",
+                "This will delete all decks and flashcards. This action cannot be undone.")) {
+            FlashcardApp.getInstance().resetData();
+            ConfigHandler.getInstance().saveOption("theme", "light"); // Resets theme to default
+        }
+    }
+
+    /**
+     * Creates an alert dialog for the 'About' section with app details.
+     * @return Configured Alert.
+     */
+    private Alert createAboutAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About Flashcard Study Helper");
+        alert.setHeaderText("Flashcard Study Helper");
+        alert.setContentText("This application is a simple flashcard study helper that allows you to " +
+                "create, edit, and study flashcards.\n\nVersion: 1.0\n" +
+                "Authors: Carson Kelley, Andrew Abdelaty, Brayden Kielb, Spencer Morse, " +
+                "and Vic Westmoreland\nLicense: MIT License\n\n" +
+                "Icon by Freepik from www.flaticon.com\nhttps://www.flaticon.com/authors/freepik\n\n" +
+                "Created as a final project for CPS 240 at Central Michigan University.");
+        return alert;
+    }
+
+    /**
+     * Displays a confirmation dialog and returns the result.
+     * @param title Title of the dialog.
+     * @param header Header text for the dialog.
+     * @param content Detailed content/message of the dialog.
+     * @return true if the user confirmed, false otherwise.
+     */
+    private boolean confirmAction(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        return alert.showAndWait().filter(response -> response == ButtonType.OK).isPresent();
     }
 }

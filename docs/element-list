@@ -1,0 +1,6 @@
+module:com.flashcardapp
+com.flashcardapp
+com.flashcardapp.gui
+com.flashcardapp.logic
+com.flashcardapp.model
+com.flashcardapp.util

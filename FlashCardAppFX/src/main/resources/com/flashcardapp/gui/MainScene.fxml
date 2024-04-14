@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<!-- Main VBox containing all components for the main scene -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<VBox fx:id="mainVBox" spacing="20" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.MainSceneController" stylesheets="/com/flashcardapp/gui/style.css">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="mainVBox" spacing="20" alignment="CENTER" fx:controller="com.flashcardapp.gui.MainSceneController">
+    <!-- Padding for the main VBox -->
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- Title Section -->
+    <!-- Title and logo section -->
     <VBox alignment="CENTER" spacing="10">
-        <Text text="Flashcard Study Helper" style="-fx-font-size: 24px;"/>
+        <Text text="Flashcard Study Helper" styleClass="scene-title" style="-fx-font-size: 24px;"/>
         <ImageView>
             <image>
-                <Image url="@/com/flashcardapp/gui/logo.png" preserveRatio="true" requestedHeight="100"/>
+                <Image url="@logo.png" preserveRatio="true" requestedHeight="100"/>
             </image>
         </ImageView>
     </VBox>
 
-    <Separator orientation="HORIZONTAL" maxWidth="600" />
+    <!-- Horizontal separator for visual distinction -->
+    <Separator orientation="HORIZONTAL" maxWidth="600"/>
 
-    <!-- Buttons Section -->
+    <!-- Main action buttons for user navigation -->
     <VBox alignment="CENTER" spacing="10">
         <Button text="Start Studying" fx:id="startStudyingButton" onAction="#handleStartStudying" styleClass="main-buttons"/>
         <Button text="Create Deck" fx:id="createDeckButton" onAction="#handleCreateDeck" styleClass="main-buttons"/>
+        <Button text="Import Deck" onAction="#handleImportDeck" styleClass="main-buttons"/>
+        <Button text="Export Deck" onAction="#handleExportDeck" styleClass="main-buttons"/>
         <Button text="Settings" fx:id="settingsButton" onAction="#handleSettings" styleClass="main-buttons"/>
     </VBox>
 
-    <!-- Status Section -->
+    <!-- Status text display at the bottom of the scene -->
     <HBox alignment="CENTER" spacing="10">
         <Text fx:id="statusText" style="-fx-font-size: 14px;"/>
     </HBox>

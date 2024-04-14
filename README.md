@@ -1,19 +1,26 @@
 # FlashCardAppFX
 
-A flashcard app using JavaFX. Allows users to create, manage, and study flashcard decks.
+A flashcard app using JavaFX. This application makes it easy to create & study decks that were either shared or created. These flashcard decks can include hints and images for both answers and questions. Along with that, there are two options of studying algorithms to choose from, including a basic rotational algorithm, and a more advanced, spaced repetition algorithm.
 
-# Checklist
+---
 
+## Checklist
+
+## *Weeks 1-4*
 - [x] Create a new deck
 - [x] Add, modify, and delete cards in a deck
-- [x] Study a deck
+- [x] Study a deck 
+## *Weeks 4-8*
 - [x] Export a deck to a file
 - [x] Import a deck from a file
-- [ ] Add images to cards
-- [ ] Spaced repetition algorithm
-- [ ] Dark mode
-- [ ] Statistics
-- [ ] Save & load user preferences (e.g., theme, last deck studied)
+- [x] Add images to cards
+- [x] Spaced repetition algorithm
+## *Weeks 8-10*
+- [x] Dark mode
+- [x] Statistics
+- [x] Save & load user preferences (e.g., theme, last deck studied)
+
+---
 
 ## Prerequisites
 
@@ -62,5 +69,33 @@ If you encounter any issues while setting up the project, consider the following
 
 For more specific issues, please consult the IDE's documentation or reach out to the project maintainers.
 
+---
+
+## Project Structure
+```text
+FlashCardAppFX/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── flashcardapp/
+│       │           ├── gui/      # GUI controllers and related files
+│       │           ├── logic/    # Business logic and algorithm implementation
+│       │           ├── model/    # Data models and structures
+│       │           └── util/     # Utility classes and helper functions
+│       └── resources/
+│           └── com/
+│               └── flashcardapp/
+│                   └── gui/      # FXML, CSS, and image resources for the GUI
+├── gradle/                       # Gradle scripts and configurations
+│   └── wrapper/
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── build.gradle                  # Gradle build configuration file
+└── settings.gradle               # Gradle settings file
+```
+
 ## UML Diagram
 ![UML Diagram](uml.png)
+
+---

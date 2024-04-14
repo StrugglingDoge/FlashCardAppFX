@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!-- Main VBox layout for the settings scene -->
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Text?>
 <?import javafx.collections.FXCollections?>
-<VBox fx:id="settingsVBox" spacing="20" alignment="CENTER" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.SettingsSceneController" stylesheets="@style.css">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="settingsVBox" spacing="20" alignment="CENTER" styleClass="container"
+      fx:controller="com.flashcardapp.gui.SettingsSceneController">
+
+    <!-- Title for the settings scene -->
     <Text text="Settings" styleClass="scene-title"/>
 
+    <!-- Visual separator for organization -->
     <Separator/>
 
+    <!-- Settings options container -->
     <VBox spacing="10">
         <HBox spacing="10" alignment="CENTER">
-            <Text text="Theme: " styleClass="flashcard-text"/>
-            <ChoiceBox fx:id="themeChoiceBox" onAction="#handleThemeChange" styleClass="choice-box">
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Light"/>
-                        <String fx:value="Dark"/>
-                    </FXCollections>
-                </items>
-            </ChoiceBox>
+            <!-- Theme selection setting -->
+            <Text text="Theme: " styleClass="flashcard-text"/> 
+            <ChoiceBox fx:id="themeChoiceBox" onAction="#handleThemeChange" styleClass="choice-box"/>
         </HBox>
     </VBox>
 
+    <!-- Separator for visual distinction -->
     <Separator/>
 
+    <!-- Action buttons for settings operations -->
     <VBox spacing="10" alignment="CENTER">
         <Button text="Reset Data" onAction="#handleResetData" styleClass="secondary-buttons"/>
-        <Button text="Export Data" onAction="#handleExportData" styleClass="secondary-buttons"/>
-        <Button text="Import Data" onAction="#handleImportData" styleClass="secondary-buttons"/>
         <Button text="About" onAction="#handleAbout" styleClass="secondary-buttons"/>
     </VBox>
 
+    <!-- Separator for visual distinction -->
     <Separator/>
 
+    <!-- Back button to navigate to the previous scene -->
     <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
 </VBox>

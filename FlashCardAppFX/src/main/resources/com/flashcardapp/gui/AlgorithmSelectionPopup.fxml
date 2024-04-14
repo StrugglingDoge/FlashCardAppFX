@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element specifying a VBox layout with a centralized alignment and uniform spacing -->
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.flashcardapp.gui.AlgorithmSelectionController"
+      alignment="CENTER" spacing="20">
+
+    <!-- Padding around the VBox content -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- ComboBox for selecting the algorithm -->
+    <ComboBox fx:id="algorithmComboBox" prefWidth="200" maxWidth="300" />
+
+    <!-- TextField for entering the number of cycles, with a prompt for better user guidance -->
+    <TextField fx:id="cycleCountField" promptText="Enter number of cycles" maxWidth="300"/>
+
+    <!-- Button to start the algorithm with an associated action handler -->
+    <Button text="Start" onAction="#handleStartButton" maxWidth="200"/>
+</VBox>

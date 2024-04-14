@@ -14,9 +14,11 @@
 .main-buttons {
     -fx-background-color: #2a9df4; /* Primary Color */
 }
+
 .main-buttons:hover {
     -fx-background-color: #1a8de3; /* Primary Hover Color */
 }
+
 .main-buttons:pressed {
     -fx-background-color: #0a7dd2; /* Primary Pressed Color */
 }
@@ -24,9 +26,11 @@
 .secondary-buttons {
     -fx-background-color: #3aafec; /* Secondary Color */
 }
+
 .secondary-buttons:hover {
     -fx-background-color: #29a0dc; /* Secondary Hover Color */
 }
+
 .secondary-buttons:pressed {
     -fx-background-color: #1990cc; /* Secondary Pressed Color */
 }
@@ -34,6 +38,7 @@
 .button:disabled {
     -fx-background-color: #b0b0b0; /* Disabled Color */
 }
+
 .button:disabled:hover,
 .button:disabled:pressed {
     -fx-background-color: #b0b0b0; /* Disabled Hover Color */
@@ -45,6 +50,7 @@
     -fx-padding: 5px 10px;
     -fx-background-color: #555555; /* Back Button Color */
 }
+
 .back-button:hover {
     -fx-background-color: #444444; /* Back Button Hover Color */
 }
@@ -79,6 +85,15 @@
     -fx-text-fill: red; /* Error Color */
 }
 
+.choice-box {
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-text-fill: black;
+    -fx-background-radius: 5px;
+    -fx-highlight-fill: #2a9df4; /* Highlight color */
+}
+
 /* Flashcard Styles */
 .flashcard {
     -fx-background-color: white;
@@ -86,8 +101,37 @@
     -fx-border-width: 2px;
     -fx-border-radius: 5px;
     -fx-padding: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
     -fx-alignment: center;
+}
+
+.stats-flashcard {
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+    -fx-max-width: 300px;
+}
+
+.hint-flashcard {
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+    -fx-max-width: 300px;
+}
+
+.flashcard-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-fill: #2a9df4; /* Primary color for title */
 }
 
 .flashcard-content {

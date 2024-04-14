@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.flashcardapp","l":"com.flashcardapp"},{"m":"com.flashcardapp","l":"com.flashcardapp.gui"},{"m":"com.flashcardapp","l":"com.flashcardapp.logic"},{"m":"com.flashcardapp","l":"com.flashcardapp.model"},{"m":"com.flashcardapp","l":"com.flashcardapp.util"}];updateSearchResults();

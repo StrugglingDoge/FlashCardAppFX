@@ -37,6 +37,7 @@ FlashCardAppFX/build/
 *.iws
 *.iml
 *.ipr
+/FlashCardAppFX/.idea
 FlashCardAppFX/out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -66,3 +67,4 @@ FlashCardAppFX/bin/
 ### Mac OS ###
 .DS_Store
 
+/FlashCardAppFX/.idea

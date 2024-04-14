@@ -1,56 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
-<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.StudySessionSceneController" stylesheets="@style.css">
+<?import javafx.scene.image.ImageView?>
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.StudySessionSceneController">
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
     <vgap>
-        <Double fx:value="20.0"/>
+        <Double fx:value="10.0"/>
     </vgap>
     <hgap>
-        <Double fx:value="20.0"/>
+        <Double fx:value="10.0"/>
     </hgap>
     <columnConstraints>
-        <ColumnConstraints percentWidth="50" minWidth="10" hgrow="SOMETIMES"/>
-        <ColumnConstraints percentWidth="50" minWidth="10" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="50" minWidth="5" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="50" minWidth="5" hgrow="SOMETIMES"/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
-        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
-        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
-        <RowConstraints minHeight="10" vgrow="SOMETIMES"/>
-        <RowConstraints minHeight="10" prefHeight="30" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="20" minHeight="5" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="20" minHeight="5" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="20" minHeight="5" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="20" minHeight="5" vgrow="SOMETIMES"/>
+        <RowConstraints percentHeight="30" minHeight="5" vgrow="SOMETIMES"/>
     </rowConstraints>
 
     <!-- Study Session Title -->
-    <Text text="Study Session" styleClass="scene-title" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+    <Text text="Study Session" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" styleClass="scene-title"/>
 
     <!-- Flashcard Section -->
-    <StackPane GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.rowSpan="3">
-        <VBox fx:id="flashcardSection" alignment="CENTER" spacing="10" styleClass="flashcard">
-            <Text fx:id="questionText" text="Question appears here" styleClass="flashcard-content" wrappingWidth="280"/>
+    <StackPane GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.rowSpan="3" styleClass="flashcard-container">
+        <VBox fx:id="flashcardSection" alignment="CENTER" spacing="15" styleClass="flashcard">
+            <ImageView fx:id="questionImageView" fitHeight="150" preserveRatio="true" visible="false"/>
+            <Text fx:id="questionText" text="Question appears here" styleClass="flashcard-title" wrappingWidth="280"/>
             <Text fx:id="answerText" text="Answer appears here" styleClass="flashcard-content" visible="false" wrappingWidth="280"/>
+            <ImageView fx:id="answerImageView" fitHeight="150" preserveRatio="true" visible="false"/>
         </VBox>
     </StackPane>
 
     <!-- Hint Section -->
     <VBox fx:id="hintContainer" alignment="TOP_CENTER" spacing="10" styleClass="flashcard, hint-flashcard" GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <Text text="Hint" styleClass="flashcard-content"/>
-        <Text fx:id="hintText" text="Click to reveal hint" styleClass="flashcard-content" wrappingWidth="280"/>
+        <Text text="Hint" styleClass="flashcard-content" textAlignment="CENTER"/>
+        <Text fx:id="hintText" text="Click to reveal hint" styleClass="flashcard-content" wrappingWidth="280" textAlignment="CENTER"/>
     </VBox>
 
     <!-- Statistics Section -->
     <VBox fx:id="statsContainer" alignment="TOP_CENTER" spacing="10" styleClass="flashcard, stats-flashcard" GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <Text text="Stats" styleClass="flashcard-content"/>
-        <Text fx:id="sessionStatsText" text="Session stats will be shown here" styleClass="flashcard-content" wrappingWidth="280"/>
+        <Text text="Stats" styleClass="flashcard-content" textAlignment="CENTER"/>
+        <Text fx:id="sessionStatsText" text="Session stats will be shown here" styleClass="flashcard-content" wrappingWidth="280" textAlignment="CENTER"/>
     </VBox>
 
     <!-- Navigation & Control Buttons Section -->
@@ -58,12 +59,12 @@
         <VBox spacing="10" alignment="CENTER">
             <HBox spacing="10" alignment="BOTTOM_CENTER">
                 <Button text="Show Answer" onAction="#handleShowAnswer" styleClass="secondary-buttons"/>
-                <Button text="Correct" onAction="#handleCorrect" styleClass="secondary-buttons"/>
-                <Button text="Incorrect" onAction="#handleIncorrect" styleClass="secondary-buttons"/>
+                <Button fx:id="correctButton" text="Correct" onAction="#handleCorrect" styleClass="secondary-buttons"/>
+                <Button fx:id="incorrectButton" text="Incorrect" onAction="#handleIncorrect" styleClass="secondary-buttons"/>
             </HBox>
             <HBox spacing="10" alignment="CENTER">
-                <Button text="Previous" onAction="#handlePrevious" styleClass="secondary-buttons"/>
-                <Button text="Next" onAction="#handleNext" styleClass="secondary-buttons"/>
+                <Button fx:id="previousButton" text="Previous" onAction="#handlePrevious" styleClass="secondary-buttons"/>
+                <Button fx:id="nextButton" text="Next" onAction="#handleNext" styleClass="secondary-buttons"/>
                 <Button text="Restart Session" onAction="#handleRestartSession" styleClass="secondary-buttons"/>
                 <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
             </HBox>

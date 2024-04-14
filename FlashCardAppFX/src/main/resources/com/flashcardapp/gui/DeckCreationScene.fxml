@@ -1,57 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<!-- Layout for deck creation scene with top-centered alignment and organized spacing -->
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Text?>
-<VBox fx:id="deckCreationVBox" spacing="20" alignment="TOP_CENTER" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flashcardapp.gui.DeckCreationSceneController" stylesheets="@style.css">
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.flashcardapp.gui.DeckCreationSceneController"
+      fx:id="deckCreationVBox" spacing="20" alignment="TOP_CENTER" styleClass="container">
+
+    <!-- Title of the scene -->
     <Text text="Create Deck" styleClass="scene-title"/>
 
+    <!-- Separator for visual distinction -->
     <Separator orientation="HORIZONTAL" />
 
+    <!-- Grid layout for form input fields and associated controls -->
     <GridPane hgap="10" vgap="10" alignment="CENTER">
-        <!--<ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="100" /> -->
+        <!-- Column definitions for structured layout -->
         <columnConstraints>
-            <ColumnConstraints minWidth="100" prefWidth="100" hgrow="SOMETIMES" />
-            <ColumnConstraints minWidth="200" prefWidth="200" hgrow="SOMETIMES" />
+            <ColumnConstraints minWidth="80" prefWidth="80" hgrow="SOMETIMES" />
+            <ColumnConstraints minWidth="200" prefWidth="300" hgrow="SOMETIMES" />
+            <ColumnConstraints minWidth="50" prefWidth="50" hgrow="SOMETIMES" />
+            <ColumnConstraints minWidth="50" prefWidth="50" hgrow="SOMETIMES" />
         </columnConstraints>
+        <!-- Row definitions for structured layout -->
         <rowConstraints>
             <RowConstraints minHeight="50" prefHeight="50" vgrow="SOMETIMES" />
             <RowConstraints minHeight="80" prefHeight="125" vgrow="SOMETIMES" />
             <RowConstraints minHeight="50" prefHeight="50" vgrow="SOMETIMES" />
         </rowConstraints>
 
+        <!-- Question input field and controls -->
         <Label text="Question:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <TextField fx:id="questionTextField" promptText="Enter question here" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field"/>
+        <TextField fx:id="questionTextField" promptText="Enter question here" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <ImageView fx:id="questionImageView" fitWidth="64" fitHeight="64" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Button fx:id="setQuestionImageButton" text="Set Image" onAction="#handleSetQuestionImage" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="secondary-buttons"/>
+        <Button fx:id="removeQuestionImageButton" text="Remove Image" onAction="#handleRemoveQuestionImage" GridPane.columnIndex="4" GridPane.rowIndex="0" styleClass="secondary-buttons"/>
 
+        <!-- Answer input area and controls -->
         <Label text="Answer:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <TextArea fx:id="answerTextArea" promptText="Enter answer here" maxWidth="Infinity" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="100" styleClass="text-area"/>
+        <TextArea fx:id="answerTextArea" promptText="Enter answer here" maxWidth="Infinity" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <ImageView fx:id="answerImageView" fitWidth="64" fitHeight="64" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <Button fx:id="setAnswerImageButton" text="Set Image" onAction="#handleSetAnswerImage" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="secondary-buttons"/>
+        <Button fx:id="removeAnswerImageButton" text="Remove Image" onAction="#handleRemoveAnswerImage" GridPane.columnIndex="4" GridPane.rowIndex="1" styleClass="secondary-buttons"/>
 
+        <!-- Hint input field -->
         <Label text="Hint:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-        <TextField fx:id="hintTextField" promptText="Enter hint here" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="50" styleClass="text-area"/>
-
+        <TextField fx:id="hintTextField" promptText="Enter hint here" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="50" styleClass="text-field"/>
     </GridPane>
 
+    <!-- Separator for visual distinction -->
     <Separator orientation="HORIZONTAL" />
 
+    <!-- Button controls for adding flashcards and displaying error messages -->
     <HBox spacing="10" alignment="CENTER">
         <Button fx:id="addFlashcardButton" text="Add Flashcard" onAction="#handleAddFlashcard" styleClass="secondary-buttons"/>
         <Label fx:id="errorMessageLabel" styleClass="error-message" visible="false"/>
     </HBox>
 
+    <!-- Separator for visual distinction -->
     <Separator orientation="HORIZONTAL" />
 
+    <!-- Scrollable area for listing added flashcards -->
     <ScrollPane fx:id="flashcardsScrollPane" fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
         <VBox fx:id="flashcardsListVBox" spacing="5">
-            <!-- Dynamically filled with flashcard summaries -->
+            <!-- This section is dynamically filled with flashcard summaries -->
         </VBox>
     </ScrollPane>
 
+    <!-- Separator for visual distinction -->
     <Separator orientation="HORIZONTAL" />
 
+    <!-- Navigation and action buttons -->
     <HBox spacing="10" alignment="CENTER">
         <Button text="Save Deck" onAction="#handleSaveDeck" styleClass="secondary-buttons"/>
         <Button text="Clear All" onAction="#handleClearAll" styleClass="secondary-buttons"/>
