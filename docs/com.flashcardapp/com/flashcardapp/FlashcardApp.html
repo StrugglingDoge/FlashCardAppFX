@@ -86,14 +86,14 @@ loadScripts(document, 'script');</script>
 <h1 title="Class FlashcardApp" class="title">Class FlashcardApp</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">javafx.application.Application
+<div class="inheritance"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html" title="class or interface in javafx.application" class="external-link">javafx.application.Application</a>
 <div class="inheritance">com.flashcardapp.FlashcardApp</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FlashcardApp</span>
-<span class="extends-implements">extends javafx.application.Application</span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html" title="class or interface in javafx.application" class="external-link">Application</a></span></div>
 <div class="block">Main application class for the Flashcard study helper.
  Manages the application lifecycle, scene transitions, and global state.</div>
 </section>
@@ -104,8 +104,8 @@ loadScripts(document, 'script');</script>
 <section class="nested-class-summary" id="nested-class-summary">
 <h2>Nested Class Summary</h2>
 <div class="inherited-list">
-<h2 id="nested-classes-inherited-from-class-javafx.application.Application">Nested classes/interfaces inherited from class&nbsp;javafx.application.Application</h2>
-<code>javafx.application.Application.Parameters</code></div>
+<h2 id="nested-classes-inherited-from-class-javafx.application.Application">Nested classes/interfaces inherited from class&nbsp;javafx.application.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html" title="class or interface in javafx.application" class="external-link">Application</a></h2>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.Parameters.html" title="class or interface in javafx.application" class="external-link">Application.Parameters</a></code></div>
 </section>
 </li>
 <!-- =========== FIELD SUMMARY =========== -->
@@ -113,8 +113,8 @@ loadScripts(document, 'script');</script>
 <section class="field-summary" id="field-summary">
 <h2>Field Summary</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-javafx.application.Application">Fields inherited from class&nbsp;javafx.application.Application</h3>
-<code>STYLESHEET_CASPIAN, STYLESHEET_MODENA</code></div>
+<h3 id="fields-inherited-from-class-javafx.application.Application">Fields inherited from class&nbsp;javafx.application.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html" title="class or interface in javafx.application" class="external-link">Application</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#STYLESHEET_CASPIAN" title="class or interface in javafx.application" class="external-link">STYLESHEET_CASPIAN</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#STYLESHEET_MODENA" title="class or interface in javafx.application" class="external-link">STYLESHEET_MODENA</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -158,7 +158,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the singleton instance of the application.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>javafx.stage.Stage</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/stage/Stage.html" title="class or interface in javafx.stage" class="external-link">Stage</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPrimaryStage()" class="member-name-link">getPrimaryStage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the primary stage of the application.</div>
@@ -168,59 +168,64 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current study algorithm.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadDeck(java.lang.String)" class="member-name-link">loadDeck</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTheme()" class="member-name-link">getTheme</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the current theme of the application.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadDeck(java.lang.String)" class="member-name-link">loadDeck</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Loads a deck from a specified path and updates the application state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetData()" class="member-name-link">resetData</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetData()" class="member-name-link">resetData</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Resets the application data and reloads the initial scene.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveCurrentDeck()" class="member-name-link">saveCurrentDeck</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveCurrentDeck()" class="member-name-link">saveCurrentDeck</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Saves the current deck, if available, to the last known path.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveDeck(com.flashcardapp.model.Deck,java.lang.String)" class="member-name-link">saveDeck</a><wbr>(<a href="model/Deck.html" title="class in com.flashcardapp.model">Deck</a>&nbsp;currentDeck,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveDeck(com.flashcardapp.model.Deck,java.lang.String)" class="member-name-link">saveDeck</a><wbr>(<a href="model/Deck.html" title="class in com.flashcardapp.model">Deck</a>&nbsp;currentDeck,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;absolutePath)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Saves the currently loaded deck to a specified path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentDeck(com.flashcardapp.model.Deck)" class="member-name-link">setCurrentDeck</a><wbr>(<a href="model/Deck.html" title="class in com.flashcardapp.model">Deck</a>&nbsp;deck)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentDeck(com.flashcardapp.model.Deck)" class="member-name-link">setCurrentDeck</a><wbr>(<a href="model/Deck.html" title="class in com.flashcardapp.model">Deck</a>&nbsp;deck)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the current deck to the specified deck.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFXMLScene(java.lang.String)" class="member-name-link">setFXMLScene</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sceneName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setFXMLScene(java.lang.String)" class="member-name-link">setFXMLScene</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sceneName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Changes the FXML scene for the application.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStudyAlgorithm(com.flashcardapp.logic.IAlgorithm)" class="member-name-link">setStudyAlgorithm</a><wbr>(<a href="logic/IAlgorithm.html" title="interface in com.flashcardapp.logic">IAlgorithm</a>&nbsp;studyAlgorithm)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStudyAlgorithm(com.flashcardapp.logic.IAlgorithm)" class="member-name-link">setStudyAlgorithm</a><wbr>(<a href="logic/IAlgorithm.html" title="interface in com.flashcardapp.logic">IAlgorithm</a>&nbsp;studyAlgorithm)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the current study algorithm.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTheme(java.lang.String)" class="member-name-link">setTheme</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;selectedTheme)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTheme(java.lang.String)" class="member-name-link">setTheme</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;selectedTheme)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the theme of the application based on the selected theme.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(javafx.stage.Stage)" class="member-name-link">start</a><wbr>(javafx.stage.Stage&nbsp;primaryStage)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#start(javafx.stage.Stage)" class="member-name-link">start</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/stage/Stage.html" title="class or interface in javafx.stage" class="external-link">Stage</a>&nbsp;primaryStage)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javafx.application.Application">Methods inherited from class&nbsp;javafx.application.Application</h3>
-<code>getHostServices, getParameters, getUserAgentStylesheet, init, launch, launch, notifyPreloader, setUserAgentStylesheet, stop</code></div>
+<h3 id="methods-inherited-from-class-javafx.application.Application">Methods inherited from class&nbsp;javafx.application.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html" title="class or interface in javafx.application" class="external-link">Application</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#getHostServices()" title="class or interface in javafx.application" class="external-link">getHostServices</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#getParameters()" title="class or interface in javafx.application" class="external-link">getParameters</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#getUserAgentStylesheet()" title="class or interface in javafx.application" class="external-link">getUserAgentStylesheet</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#init()" title="class or interface in javafx.application" class="external-link">init</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#launch(java.lang.Class,java.lang.String...)" title="class or interface in javafx.application" class="external-link">launch</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#launch(java.lang.String...)" title="class or interface in javafx.application" class="external-link">launch</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#notifyPreloader(javafx.application.Preloader.PreloaderNotification)" title="class or interface in javafx.application" class="external-link">notifyPreloader</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#setUserAgentStylesheet(java.lang.String)" title="class or interface in javafx.application" class="external-link">setUserAgentStylesheet</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#stop()" title="class or interface in javafx.application" class="external-link">stop</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -260,10 +265,10 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="start(javafx.stage.Stage)">
 <h3>start</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">start</span><wbr><span class="parameters">(javafx.stage.Stage&nbsp;primaryStage)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">start</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/stage/Stage.html" title="class or interface in javafx.stage" class="external-link">Stage</a>&nbsp;primaryStage)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code>start</code>&nbsp;in class&nbsp;<code>javafx.application.Application</code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html#start(javafx.stage.Stage)" title="class or interface in javafx.application" class="external-link">start</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/application/Application.html" title="class or interface in javafx.application" class="external-link">Application</a></code></dd>
 </dl>
 </section>
 </li>
@@ -309,7 +314,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getPrimaryStage()">
 <h3>getPrimaryStage</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">javafx.stage.Stage</span>&nbsp;<span class="element-name">getPrimaryStage</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/javafx.graphics/javafx/stage/Stage.html" title="class or interface in javafx.stage" class="external-link">Stage</a></span>&nbsp;<span class="element-name">getPrimaryStage</span>()</div>
 <div class="block">Returns the primary stage of the application.</div>
 </section>
 </li>
@@ -360,6 +365,13 @@ loadScripts(document, 'script');</script>
 <h3>setCurrentDeck</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentDeck</span><wbr><span class="parameters">(<a href="model/Deck.html" title="class in com.flashcardapp.model">Deck</a>&nbsp;deck)</span></div>
 <div class="block">Sets the current deck to the specified deck.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTheme()">
+<h3>getTheme</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getTheme</span>()</div>
+<div class="block">Returns the current theme of the application.</div>
 </section>
 </li>
 </ul>

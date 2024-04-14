@@ -103,7 +103,7 @@ public class BasicRotationalAlgorithm implements IAlgorithm {
 
     @Override
     public int getTotalCycles() {
-        return totalCycles;
+        return maxCycles > 0 ? maxCycles : totalCycles;
     }
 
     @Override

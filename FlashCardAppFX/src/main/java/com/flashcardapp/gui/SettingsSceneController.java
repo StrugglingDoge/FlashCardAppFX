@@ -71,6 +71,9 @@ public class SettingsSceneController {
      */
     private Alert createAboutAlert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initOwner(FlashcardApp.getInstance().getPrimaryStage());
+        // update style
+        alert.getDialogPane().getStylesheets().add(getClass().getResource("/com/flashcardapp/gui/" + FlashcardApp.getInstance().getTheme()).toExternalForm());
         alert.setTitle("About Flashcard Study Helper");
         alert.setHeaderText("Flashcard Study Helper");
         alert.setContentText("This application is a simple flashcard study helper that allows you to " +

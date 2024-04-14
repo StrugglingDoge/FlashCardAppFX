@@ -67,6 +67,9 @@ public class ConfigHandler {
                 configMap = mapper.readValue(configFile, new TypeReference<Map<String, Object>>() {});
             } else {
                 configMap = new HashMap<>();
+                // create the directory if it doesn't exist
+                configFile.getParentFile().mkdirs();
+                configFile.createNewFile();
             }
         } catch (IOException e) {
             configMap = new HashMap<>();

@@ -19,9 +19,9 @@
         <!-- Column definitions for structured layout -->
         <columnConstraints>
             <ColumnConstraints minWidth="80" prefWidth="80" hgrow="SOMETIMES" />
-            <ColumnConstraints minWidth="200" prefWidth="300" hgrow="SOMETIMES" />
-            <ColumnConstraints minWidth="50" prefWidth="50" hgrow="SOMETIMES" />
-            <ColumnConstraints minWidth="50" prefWidth="50" hgrow="SOMETIMES" />
+            <ColumnConstraints minWidth="200" prefWidth="250" hgrow="ALWAYS" maxWidth="Infinity"/>
+            <ColumnConstraints minWidth="70" prefWidth="70" hgrow="SOMETIMES" />
+            <ColumnConstraints minWidth="100" prefWidth="125" hgrow="SOMETIMES" maxWidth="125"/>
         </columnConstraints>
         <!-- Row definitions for structured layout -->
         <rowConstraints>

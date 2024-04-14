@@ -369,9 +369,8 @@ public class DeckCreationSceneController {
         questionImageView.setImage(null);
         if (currentlyEditing != null) {
             currentlyEditing.setQuestionImage(null);
-        } else {
-            temporaryQuestionImage = null;
         }
+        temporaryQuestionImage = null;
     }
     
     /**
@@ -382,9 +381,8 @@ public class DeckCreationSceneController {
         answerImageView.setImage(null);
         if (currentlyEditing != null) {
             currentlyEditing.setAnswerImage(null);
-        } else {
-            temporaryAnswerImage = null;
         }
+        temporaryAnswerImage = null;
     }
 
     /**

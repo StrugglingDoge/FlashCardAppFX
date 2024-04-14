@@ -26,6 +26,7 @@ public class AlgorithmSelectionController {
     public void initialize() {
         algorithmComboBox.getItems().addAll("Basic Rotation", "Spaced Repetition");
         algorithmComboBox.getSelectionModel().selectFirst();
+
     }
 
     /**

@@ -30,6 +30,7 @@ public class StudySessionSceneController {
     @FXML private Button nextButton;
     @FXML private Button correctButton;
     @FXML private Button incorrectButton;
+    @FXML private Button showAnswerButton;
 
     private Deck currentDeck;
     private IAlgorithm studyAlgorithm;
@@ -45,7 +46,10 @@ public class StudySessionSceneController {
         hideAnswer();
         loadDeckAndAlgorithm();
         bindUIComponents();
+
+        countForCycle = 0;
         showFlashcard();
+        countForCycle = 0;
     }
 
     /**
@@ -132,9 +136,12 @@ public class StudySessionSceneController {
             wasLastOfCycle = false;
         }
         if (studyAlgorithm.moveToNext()) {
+            if(countForCycle < currentDeck.getFlashcardCount() - 1)
+                countForCycle++;
+            else
+                countForCycle = 0;
             showFlashcard();
         }
-        countForCycle++;
     }
 
     /**
@@ -144,9 +151,12 @@ public class StudySessionSceneController {
     @FXML
     public void handlePrevious(ActionEvent actionEvent) {
         if (studyAlgorithm.moveToPrevious()) {
+            if(countForCycle > 0)
+                countForCycle--;
+            else
+                countForCycle = currentDeck.getFlashcardCount() - 1;
             showFlashcard();
         }
-        countForCycle--;
     }
 
     /**
@@ -160,6 +170,10 @@ public class StudySessionSceneController {
         if (answerImageView.getImage() != null) {
             answerImageView.setVisible(isVisible && !answerImageView.getImage().getUrl().isEmpty());
         }
+
+        // change the text of the button to toggle the answer
+        Button button = (Button) event.getSource();
+        button.setText(isVisible ? "Hide Answer" : "Show Answer");
     }
 
     /**
@@ -212,13 +226,13 @@ public class StudySessionSceneController {
      */
     private void updateButtons(boolean isLastCard) {
         boolean isFirstCard = studyAlgorithm.isFirstCard();
-        previousButton.setDisable(isFirstCard);
+        previousButton.setDisable(isFirstCard || studyAlgorithm.isSessionComplete());
         nextButton.setDisable(studyAlgorithm.isSessionComplete());
 
         Flashcard currentCard = studyAlgorithm.getCurrentFlashcard();
         boolean hasBeenAnswered = studyAlgorithm.hasAnsweredThisCycle(currentCard);
-        correctButton.setDisable(hasBeenAnswered);
-        incorrectButton.setDisable(hasBeenAnswered);
+        correctButton.setDisable(hasBeenAnswered || studyAlgorithm.isSessionComplete());
+        incorrectButton.setDisable(hasBeenAnswered || studyAlgorithm.isSessionComplete());
 
         this.wasLastOfCycle = isLastCard;
     }
@@ -231,15 +245,19 @@ public class StudySessionSceneController {
         if (card != null) {
             questionText.setText(card.getQuestion());
             answerText.setText(card.getAnswer());
-            sessionStatsText.setText("Mastery Level: " + studyAlgorithm.getMasteryLevel(card));
+            int index = countForCycle;
+            sessionStatsText.setText("Current Card: " + (index+1) + "/" + currentDeck.getFlashcardCount()
+                    + "\nMastery Level: " + studyAlgorithm.getMasteryLevel(card));
             answerText.setVisible(false); // Ensure the answer is hidden initially
+            // reset button text for answer visibility
+            showAnswerButton.setText("Show Answer");
 
             updateFlashcardImages(card);
             updateHintDisplay(card);
             updateButtons(false);  // Update button states based on the current card
 
-            correctButton.setDisable(studyAlgorithm.hasAnsweredThisCycle(card));
-            incorrectButton.setDisable(studyAlgorithm.hasAnsweredThisCycle(card));
+            correctButton.setDisable(studyAlgorithm.hasAnsweredThisCycle(card) || studyAlgorithm.isSessionComplete());
+            incorrectButton.setDisable(studyAlgorithm.hasAnsweredThisCycle(card) || studyAlgorithm.isSessionComplete());
         }
     }
 
@@ -295,10 +313,22 @@ public class StudySessionSceneController {
      * Updates the session statistics display with the number of correct, incorrect responses and remaining cards.
      */
     private void updateSessionStats() {
+
         int totalCards = currentDeck.getFlashcardCount() * studyAlgorithm.getTotalCycles();
         int totalCorrect = studyAlgorithm.getTotalCorrect();
         int totalIncorrect = studyAlgorithm.getTotalIncorrect();
 
-        sessionStatsText.setText(String.format("Correct: %d, Incorrect: %d, Remaining: %d", totalCorrect, totalIncorrect, totalCards - totalCorrect - totalIncorrect));
+        // check if session is complete, and show overall stats
+        if (studyAlgorithm.isSessionComplete()) {
+            sessionStatsText.setText("Session Complete\n\n" +
+                    "Total Correct: " + totalCorrect + "\n" +
+                    "Total Incorrect: " + totalIncorrect + "\n" +
+                    "Overall percentage: " + String.format("%.2f%%", (double) totalCorrect / (totalCorrect + totalIncorrect) * 100));
+        } else {
+            sessionStatsText.setText("Total Correct: " + totalCorrect + "\n" +
+                    "Total Incorrect: " + totalIncorrect + "\n" +
+                    "Remaining Cards: " + (totalCards - totalCorrect - totalIncorrect));
+        }
+
     }
 }

@@ -2,6 +2,7 @@ package com.flashcardapp.gui;
 
 import com.flashcardapp.FlashcardApp;
 import com.flashcardapp.model.Deck;
+import com.flashcardapp.util.ConfigHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -101,7 +102,11 @@ public class MainSceneController {
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle(title);
+            stage.initOwner(FlashcardApp.getInstance().getPrimaryStage());
             stage.setScene(new Scene(root));
+            String currentTheme = FlashcardApp.getInstance().getTheme();
+
+            stage.getScene().getStylesheets().add(getClass().getResource("/com/flashcardapp/gui/" + currentTheme).toExternalForm());
             stage.showAndWait();
         } catch (IOException e) {
             System.err.println("Error loading the popup scene: " + e.getMessage());

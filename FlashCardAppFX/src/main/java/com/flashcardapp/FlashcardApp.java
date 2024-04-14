@@ -204,4 +204,11 @@ public class FlashcardApp extends Application {
     public void setCurrentDeck(Deck deck) {
         currentDeck = deck;
     }
+
+    /**
+     * Returns the current theme of the application.
+     */
+    public String getTheme() {
+        return currentStyle;
+    }
 }

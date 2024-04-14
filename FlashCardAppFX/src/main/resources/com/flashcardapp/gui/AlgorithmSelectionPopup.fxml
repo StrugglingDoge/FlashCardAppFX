@@ -12,12 +12,12 @@
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <!-- ComboBox for selecting the algorithm -->
-    <ComboBox fx:id="algorithmComboBox" prefWidth="200" maxWidth="300" />
+    <!-- ComboBox for selecting the algorithm class -->
+    <ComboBox fx:id="algorithmComboBox" prefWidth="200" maxWidth="300" styleClass="combo-box"/>
 
     <!-- TextField for entering the number of cycles, with a prompt for better user guidance -->
-    <TextField fx:id="cycleCountField" promptText="Enter number of cycles" maxWidth="300"/>
+    <TextField fx:id="cycleCountField" promptText="Enter number of cycles" maxWidth="300" styleClass="text-field"/>
 
     <!-- Button to start the algorithm with an associated action handler -->
-    <Button text="Start" onAction="#handleStartButton" maxWidth="200"/>
+    <Button text="Start" onAction="#handleStartButton" maxWidth="200" styleClass="main-buttons"/>
 </VBox>

@@ -58,7 +58,7 @@
     <HBox spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2">
         <VBox spacing="10" alignment="CENTER">
             <HBox spacing="10" alignment="BOTTOM_CENTER">
-                <Button text="Show Answer" onAction="#handleShowAnswer" styleClass="secondary-buttons"/>
+                <Button fx:id="showAnswerButton" text="Show Answer" onAction="#handleShowAnswer" styleClass="secondary-buttons"/>
                 <Button fx:id="correctButton" text="Correct" onAction="#handleCorrect" styleClass="secondary-buttons"/>
                 <Button fx:id="incorrectButton" text="Incorrect" onAction="#handleIncorrect" styleClass="secondary-buttons"/>
             </HBox>

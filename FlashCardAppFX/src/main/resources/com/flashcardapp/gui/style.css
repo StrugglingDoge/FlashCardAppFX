@@ -3,6 +3,25 @@
     -fx-font-family: 'Arial';
 }
 
+.combo-box {
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-text-fill: black;
+    -fx-background-radius: 5px;
+    -fx-highlight-fill: #2a9df4; /* Highlight color */
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: #2a9df4; /* Highlight color */
+    -fx-text-fill: white;
+}
+
 /* Button Styles */
 .button {
     -fx-font-size: 16px;
@@ -113,7 +132,6 @@
     -fx-padding: 20px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
     -fx-alignment: center;
-    -fx-max-width: 300px;
 }
 
 .hint-flashcard {
@@ -124,7 +142,6 @@
     -fx-padding: 20px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
     -fx-alignment: center;
-    -fx-max-width: 300px;
 }
 
 .flashcard-title {
@@ -165,6 +182,26 @@
 .flashcard-hint {
     -fx-font-size: 12px;
     -fx-font-style: italic;
+}
+
+.hint-flashcard {
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
+}
+
+.stats-flashcard {
+    -fx-background-color: white;
+    -fx-border-color: #2a9df4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 10);
+    -fx-alignment: center;
 }
 
 .scroll-pane {

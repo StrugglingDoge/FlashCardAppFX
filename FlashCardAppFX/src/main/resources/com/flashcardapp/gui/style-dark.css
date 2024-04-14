@@ -4,7 +4,45 @@
     -fx-background-color: #1e1e1e;
     -fx-highlight-text-fill: #ffffff;
     -fx-highlight-fill: #2a9df4; /* Highlight color */
+    -fx-fill: #ffffff;
+}
+
+.alert .dialog-pane .content {
     -fx-text-fill: #d0d0d0;
+    -fx-background-color: #333333; /* Dark alert background */
+    -fx-fill: #d0d0d0;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #2a9df4; /* Primary Color */
+    -fx-text-fill: #ffffff;
+    -fx-fill: #ffffff;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #ffffff;
+    -fx-fill: #ffffff;
+}
+
+.combo-box {
+    -fx-font-size: 14px;
+    -fx-background-color: #333333;
+    -fx-border-color: #2a9df4;
+    -fx-text-fill: #d0d0d0;
+    -fx-fill: #d0d0d0;
+    -fx-background-radius: 5px;
+    -fx-highlight-fill: #2a9df4; /* Highlight color */
+}
+
+/* .combo-box fix text color */
+.combo-box .list-cell {
+    -fx-background-color: #333333;
+    -fx-text-fill: #d0d0d0;
+}
+
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: #2a9df4; /* Highlight color */
+    -fx-text-fill: #ffffff;
 }
 
 /* Button Styles */
@@ -12,7 +50,16 @@
     -fx-font-size: 16px;
     -fx-padding: 10px 20px;
     -fx-background-radius: 5px;
+    -fx-background-color: #2a9df4; /* Primary Color */
     -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #1a8de3; /* Primary Hover Color */
+}
+
+.button:pressed {
+    -fx-background-color: #0a7dd2; /* Primary Pressed Color */
 }
 
 .flashcard-text {
